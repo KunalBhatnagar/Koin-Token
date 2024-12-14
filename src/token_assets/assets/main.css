@@ -1,74 +1,50 @@
-/* Global Variables for Consistent Theming */
-:root {
-  --primary-bg: #f5f5dc; /* Beige */
-  --primary-font: "Helvetica Neue", sans-serif;
-  --window-bg: #4b3832; /* Coffee Brown */
-  --window-shadow: rgba(0, 0, 0, 0.4);
-  --button-bg: #6b4226; /* Toasted Brown */
-  --button-hover-bg: #855e42; /* Cocoa */
-  --disabled-bg: #d3cbc6; /* Soft Beige */
-  --disabled-border: #9b6d4a; /* Muted Brown */
-  --text-primary: #ffffff; /* White */
-  --text-secondary: #2c2c2c; /* Charcoal */
-}
-
 html {
-  background: var(--primary-bg);
-  font-family: var(--primary-font), monospace;
-  font-size: 1rem;
-  color: var(--text-primary);
+  background: #f5f5dc; /* Beige */
+  font-family: "Georgia", serif; /* Change to a serif font */
+  font-size: 12pt; /* Increase base font size */
 }
 
 body {
-  margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  margin: 0;
+  font-size: 12pt; /* Increased font size */
 }
 
-/* Utility Classes */
-.hidden {
-  display: none;
+span:after {
+  content: " ";
+  display: inline-block;
+  width: 2%;
 }
 
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+fieldset {
+  float: left;
+  padding-right: 18px;
 }
 
-/* Logo Styling */
 #logo {
-  font-family: "Times New Roman", serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
+  font-family: "Times", serif;
+  font-size: 20pt;
+  color: #3e2a47; /* Dark brown */
 }
 
-/* Window Container */
 .window {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem auto;
-  width: 90%;
+  position: relative;
+  cursor: default;
+  margin: 2em auto;
+  width: 80%;
+  background: #d2b48c; /* Tan */
+  color: #3e2a47; /* Dark brown */
+  border: 6px double #3e2a47; /* Dark brown border */
+  padding: 1em;
+  box-shadow: 0 0 0 3px #d2b48c, 1em 1em 3px 0 rgba(0, 0, 0, 0.5);
   max-width: 640px;
-  background: var(--window-bg);
-  color: var(--text-primary);
-  border: 4px solid var(--text-primary);
-  padding: 1.5rem;
-  box-shadow: 0 0 15px var(--window-shadow);
-  border-radius: 12px;
 }
 
 .window.white {
-  background: #e8e8e8; /* Light Gray */
-  color: var(--text-secondary);
+  background: #f5f5dc; /* Beige */
+  color: #3e2a47; /* Dark brown */
+  border-color: #3e2a47; /* Dark brown */
+  box-shadow: 0 0 0 3px #f5f5dc, 1em 1em 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 .window.half-width {
@@ -77,78 +53,132 @@ body {
 
 .window h1 {
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
+  color: #3e2a47; /* Dark brown */
+  font-size: 28pt; /* Keeping h1 size the same */
 }
 
-/* Buttons */
-button, .button {
-  font-family: var(--primary-font);
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--text-primary);
-  background: var(--button-bg);
-  padding: 0.6rem 1.5rem;
+.window.blue p {
+  color: white;
+  text-shadow: 0 0 2px #3e2a47; /* Dark brown text shadow */
+}
+
+button {
+  margin: 0;
+  padding: 0;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-button:hover, .button:hover {
-  background: var(--button-hover-bg);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 10px var(--window-shadow);
+button,
+.button,
+.button:link {
+  display: inline-block;
+  font-weight: bolder;
+  color: white;
+  font-family: inherit;
+  font-size: 14pt; /* Increased font size for buttons */
+  background: #8b4513; /* Saddle brown */
+  padding: 0 1em;
+  box-shadow: 0.5em 0.5em 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: 0.2s all ease-in;
+  border: 1px outset #8b4513; /* Saddle brown */
+}
+
+button.full-width,
+.button.full-width {
+  display: block;
+  text-align: center;
+}
+
+button:before,
+.button:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+}
+
+button:hover,
+.button:active,
+.button:focus,
+.button:hover {
+  transform: translate3d(0.25em, 0.25em, 10em);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  background: #a0522d; /* Sienna */
+}
+
+button:hover:before,
+.button:hover:before,
+button:focus:before,
+.button:focus:before {
+  top: -1em;
+  left: -1em;
+}
+
+.button.pressed {
+  box-shadow: none;
+  left: 0.25em;
+  top: 0.25em;
+  margin-right: 0.25em;
+  background: #deb887; /* Burlywood */
+  border: 1px outset #d2691e; /* Chocolate */
 }
 
 button:disabled {
-  background: var(--disabled-bg);
-  border: 1px solid var(--disabled-border);
-  cursor: not-allowed;
+  transform: translate3d(0.25em, 0.25em, 10em);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  background: #a9a9a9; /* Dark gray */
+  border: 1px outset #707070;
 }
 
-/* Inputs and Textareas */
-input, textarea {
-  background: #ffffff;
-  color: #2c2c2c;
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #cccccc;
-  border-radius: 6px;
-  font-size: 1rem;
+button:first-letter,
+.button:first-letter {
+  color: yellow;
 }
 
-input:disabled {
-  background: var(--disabled-bg);
-  color: var(--disabled-border);
-  border: 2px solid var(--disabled-border);
+button#btn-transfer {
+  margin-top: 20px;
 }
 
+input,
 textarea {
-  resize: vertical;
+  background: #8b4513; /* Saddle brown */
+  color: #f5f5dc; /* Beige */
+  width: 100%;
+  max-width: 100%;
+  font-size: 14pt; /* Increased font size for inputs */
+}
+input:disabled {
+  background: #505070;
+  color: #d0d0d0;
+  border: 2px solid #505070;
 }
 
-/* List Styles */
+.window > textarea {
+  width: 100%;
+  border: none;
+}
+
 ul {
-  list-style: none;
+  margin: 0;
   padding: 0;
 }
 
 li {
-  margin: 0.5rem 0;
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-/* Trade Buttons */
 .trade-buttons {
   text-align: center;
-  margin-top: 1.2rem;
+  margin-top: 20px;
 }
 
-/* Flexbox Container for Transfer Section */
-.transfer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+div .transfer {
+  display: table;
   margin: auto;
 }
