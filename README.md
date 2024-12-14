@@ -1,3 +1,83 @@
+# Koiners Web3 Decentralized Application
+
+## Project Description
+
+This is a Web3 decentralized application built on the Internet Computer blockchain, featuring Internet Identity for user authentication. The application uses a custom token called **Koiners** and includes a faucet that allows logged-in users to claim **10,000 Koiners**. 
+
+In this app, users can:
+- Check their balance of Koiners.
+- Transfer Koiners to another account.
+
+The total supply of Koiners is **1 billion**, with the principal owner holding **500 million Koiners** and the local canister holding another **500 million Koiners**. When a new user logs in using Internet Identity, they are credited with **10,000 Koiners** from the local canister.
+
+## Technical Details
+
+### Frontend
+- Built with **React** for a smooth user experience.
+- Styled using **HTML** and **CSS**.
+
+### Backend
+- Written in **Motoko** for the Internet Computer blockchain.
+- Local canister stores **500 million Koiners**, with a total supply of **1 billion**.
+- The principal owner holds **500 million Koiners**.
+- The faucet gives **10,000 Koiners** to each new user upon login.
+
+### Blockchain & Deployment
+- Deployed on the **Internet Computer blockchain** using **Motoko** for smart contract logic.
+- The front end interacts with the backend via canisters for token transactions.
+
+## Features
+- **Internet Identity Authentication**: Secure login for users via Internet Identity.
+- **Token Faucet**: New users receive 10,000 Koiners upon logging in.
+- **Balance Tracking**: Users can check their Koiners balance.
+- **Token Transfers**: Users can transfer Koiners to other accounts.
+
+## Installation
+
+To run the application locally, follow these steps:
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/koiners-dapp.git
+    cd koiners-dapp
+    ```
+
+2. Install dependencies:
+
+    For the frontend (React app):
+    ```bash
+    npm install
+    ```
+
+    For the Motoko backend (canister):
+    ```bash
+    dfx new <project-name>
+    ```
+
+3. Start the local canister:
+
+    ```bash
+    dfx start
+    ```
+
+4. Run the frontend:
+
+    ```bash
+    npm start
+    ```
+
+5. Access the application at `http://localhost:3000`.
+
+## Contributing
+
+Feel free to open issues and submit pull requests. Contributions are welcome!
+
+
+
+
+
+
 # Check your Balance
 
 1. Find out your principal id:
